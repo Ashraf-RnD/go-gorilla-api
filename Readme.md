@@ -1,17 +1,31 @@
-```Make project directory & cd into it```
+##### Make project directory & cd into it
 
+```
 mkdir go-gorilla-api
 cd go-gorilla-api
+```
 
+##### To initialize
 
-```To initialize```
+```go mod init  go-gorilla-api`
 
-go mod init  go-gorilla-api
+##### To add module requirements and sums:
 
-```To add module requirements and sums:```
+```go mod tidy```
 
-go mod tidy
+##### For Installation of Gorilla Mux
 
-```For Installation of Gorilla Mux```
+```go get -u github.com/gorilla/mux```
 
-go get -u github.com/gorilla/mux
+#### To-Learn List
+- Rest
+- gRPC
+
+- Routing
+- Logging
+- Exception handling
+- Environment variables & properties
+- Event Emmit
+- API invokation
+
+- AWS services
