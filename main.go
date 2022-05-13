@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
@@ -10,22 +9,11 @@ import (
 func main() {
 	route := mux.NewRouter()
 
-	route.HandleFunc("/books/{title}", bookTitleHandler).Methods("POST")
+	bookRouter := route.PathPrefix("/books").Subrouter()
 
+	bookRouter.HandleFunc("/{title}", bookTitleHandler).Methods("POST")
+	bookRouter.HandleFunc("/title/{title}/author/{author}", bookInfoHandler).Methods("GET")
+
+	http.Handle("/", route)
 	http.ListenAndServe(":9200", route)
-}
-
-// func bookTitleHandler(w http.ResponseWriter, r *http.Request) {
-// 	vars := mux.Vars(r)
-
-// 	title := vars["title"]
-
-// 	log.Println("Router:: Book-Title: " + title)
-// }
-
-func logging(f http.HandlerFunc) http.HandlerFunc {
-	return func(w http.ResponseWriter, r *http.Request) {
-		log.Println(r.URL.Path)
-		f(w, r)
-	}
 }

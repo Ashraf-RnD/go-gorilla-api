@@ -7,7 +7,7 @@ cd go-gorilla-api
 
 ##### To initialize
 
-```go mod init  go-gorilla-api`
+```go mod init  go-gorilla-api```
 
 ##### To add module requirements and sums:
 
@@ -18,14 +18,22 @@ cd go-gorilla-api
 ```go get -u github.com/gorilla/mux```
 
 #### To-Learn List
-- Rest
+- Rest [In-progress]
 - gRPC
 
-- Routing
-- Logging
+- Routing [In-progress]
+- Logging [In-progress]
 - Exception handling
 - Environment variables & properties
+- K8s deployment
 - Event Emmit
 - API invokation
 
 - AWS services
+    - DynamoDB
+    - S3
+    - Cognito
+- Redis
+- MongoDB
+- Postgresql
+- Files
